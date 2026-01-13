@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="negro">#000000</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="gris">#F1F3F5</color>
+
+    <color name="azul">#4285F4</color>
+
+    <color name="rojo_borrar_fondo">#FDE7E7</color>
+    <color name="rojo_borrar_texto">#D93025</color>
+
+    <color name="gris_botones_arriba">#E8EAED</color>
+
+    <color name="texto_numeros">#202124</color>
+    <color name="texto_secundario">#70757A</color>
+</resources>

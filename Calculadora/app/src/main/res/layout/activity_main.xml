@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F1F3F4"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:gravity="end"
+        android:inputType="textPersonName"
+        android:lines="1"
+        android:text="6,170"
+        android:textColor="#202124"
+        android:textSize="64sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:layout_margin="6dp"
+            android:text="C"
+            android:onClick="clearScreen"
+            android:textColor="#D93025"
+            app:backgroundTint="#FDE7E9"
+            app:cornerRadius="24dp" /> <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:layout_margin="6dp"
+        android:onClick="deleteLast"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:iconGravity="textStart"
+        app:backgroundTint="#E8EAED"
+        app:cornerRadius="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_margin="6dp"
+            android:text="/"
+            android:onClick="operate"
+            android:textColor="#202124"
+            app:backgroundTint="#E8EAED"
+            app:cornerRadius="24dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="7" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="8" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="9" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="4" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="5" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="6" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="6dp" android:text="×" android:onClick="operate" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="6dp" android:text="-" android:onClick="operate" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:orientation="vertical">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="1" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="2" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="3" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2" android:layout_margin="6dp" android:text="0" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="." android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="6dp" android:text="+" android:onClick="operate" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="2" android:layout_margin="6dp" android:text="=" android:onClick="calculateResult" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
