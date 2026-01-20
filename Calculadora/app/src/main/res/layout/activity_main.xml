@@ -4,22 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F1F3F4"
+    android:background="@color/gris"
     android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="end"
+        android:paddingEnd="10dp"
+        android:textColor="@color/texto_secundario"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/et_display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="10dp"
         android:background="@null"
+        android:focusable="false"
         android:gravity="end"
-        android:inputType="textPersonName"
-        android:lines="1"
-        android:text="6,170"
-        android:textColor="#202124"
-        android:textSize="64sp" />
+        android:inputType="none"
+        android:text="0"
+        android:textColor="@color/texto_numeros"
+        android:textSize="56sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,102 +37,102 @@
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_m_plus"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="4dp" android:text="M+" android:onClick="memoryLogic"
+            android:textSize="22sp" android:textColor="@color/texto_secundario"
+            app:backgroundTint="@color/gris_botones_arriba" app:cornerRadius="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_m_minus"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="4dp" android:text="M-" android:onClick="memoryLogic"
+            android:textSize="22sp" android:textColor="@color/texto_secundario"
+            app:backgroundTint="@color/gris_botones_arriba" app:cornerRadius="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_m_recall"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="4dp" android:text="MR" android:onClick="memoryLogic"
+            android:textSize="20sp" android:textColor="@color/texto_secundario"
+            app:backgroundTint="@color/gris_botones_arriba" app:cornerRadius="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_power"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="4dp" app:iconSize="28dp" app:icon="@drawable/ic_power"
+            android:onClick="operate"
+            app:backgroundTint="@color/gris_botones_arriba" app:iconTint="@color/texto_numeros" app:cornerRadius="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="4dp" android:text="/" android:onClick="operate"
+            android:textSize="22sp" android:textColor="@color/texto_numeros"
+            app:backgroundTint="@color/gris_botones_arriba" app:cornerRadius="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_root"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:layout_margin="4dp" android:onClick="calculateRoot"
+            app:backgroundTint="@color/gris_botones_arriba" app:cornerRadius="12dp"
+            app:icon="@drawable/ic_root" app:iconGravity="textStart" app:iconSize="28dp"
+            app:iconTint="@color/texto_numeros" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2"
+            android:layout_margin="4dp" android:text="C" android:onClick="clearScreen"
+            android:textSize="22sp" android:textColor="@color/rojo_borrar_texto"
+            app:backgroundTint="@color/rojo_borrar_fondo" app:cornerRadius="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal">
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:layout_margin="6dp"
-            android:text="C"
-            android:onClick="clearScreen"
-            android:textColor="#D93025"
-            app:backgroundTint="#FDE7E9"
-            app:cornerRadius="24dp" /> <com.google.android.material.button.MaterialButton
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="5"
-        android:layout_margin="6dp"
-        android:onClick="deleteLast"
-        app:icon="@android:drawable/ic_menu_revert"
-        app:iconGravity="textStart"
-        app:backgroundTint="#E8EAED"
-        app:cornerRadius="24dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:layout_margin="6dp"
-            android:text="/"
-            android:onClick="operate"
-            android:textColor="#202124"
-            app:backgroundTint="#E8EAED"
-            app:cornerRadius="24dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="6"
             android:orientation="vertical">
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="7" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="8" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="9" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="7" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="8" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="9" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
             </LinearLayout>
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="4" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="5" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="6" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="4" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="5" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="6" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="1" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="2" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="3" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2" android:layout_margin="4dp" android:text="0" android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
+                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="4dp" android:text="." android:textSize="22sp" android:onClick="insertNumber" app:backgroundTint="@color/blanco" android:textColor="@color/texto_numeros" app:cornerRadius="20dp"/>
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="vertical">
-            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="6dp" android:text="×" android:onClick="operate" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
-            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="6dp" android:text="-" android:onClick="operate" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="4dp" android:text="×" android:textSize="22sp" android:onClick="operate" app:backgroundTint="@color/azul" android:textColor="@color/blanco" app:cornerRadius="20dp"/>
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="4dp" android:text="-" android:textSize="22sp" android:onClick="operate" app:backgroundTint="@color/azul" android:textColor="@color/blanco" app:cornerRadius="20dp"/>
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="4dp" android:text="+" android:textSize="22sp" android:onClick="operate" app:backgroundTint="@color/azul" android:textColor="@color/blanco" app:cornerRadius="20dp"/>
+            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="4dp" android:text="=" android:textSize="22sp" android:onClick="calculateResult" app:backgroundTint="@color/azul" android:textColor="@color/blanco" app:cornerRadius="20dp"/>
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="6"
-            android:orientation="vertical">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="1" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="2" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="3" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-            </LinearLayout>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="2" android:layout_margin="6dp" android:text="0" android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-                <com.google.android.material.button.MaterialButton android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_margin="6dp" android:text="." android:onClick="insertNumber" app:backgroundTint="#FFFFFF" android:textColor="#202124" app:cornerRadius="20dp"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="vertical">
-            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:layout_margin="6dp" android:text="+" android:onClick="operate" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
-            <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="2" android:layout_margin="6dp" android:text="=" android:onClick="calculateResult" app:backgroundTint="#4285F4" app:cornerRadius="20dp"/>
-        </LinearLayout>
-    </LinearLayout>
-
 </LinearLayout>
